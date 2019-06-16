@@ -1,0 +1,94 @@
+﻿
+@{
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div>
+
+        <p><button onclick="starttest1();">test 1</button></p>
+        <p><button onclick="starttest2();">test 2</button></p>
+        <p><button onclick="starttest3();">test 3</button></p>
+        <p><button onclick="starttest4();">test 4</button></p>
+        <p><button onclick="starttest5();">test 5</button></p>
+        <p>Response</p>
+        <p id="responsebox"></p>
+    </div>
+
+    <script>
+        
+        function starttest1() {
+            var req = new XMLHttpRequest();
+            req.open("POST", "http://localhost:52532/api/action1");
+            req.send();
+
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    document.getElementById("responsebox").innerText = req.responseText;
+                }
+            }
+        }
+
+        function starttest2() {
+            var req = new XMLHttpRequest();
+            req.open("POST", "http://localhost:52532/api/action2");
+            req.send();
+
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    document.getElementById("responsebox").innerText = req.responseText;
+                }
+            }
+        }
+
+        function starttest3() {
+            var req = new XMLHttpRequest();
+            req.open("POST", "http://localhost:52532/api/Test2");
+            req.send();
+
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    document.getElementById("responsebox").innerText = req.responseText;
+                }
+            }
+        }
+
+        function starttest4() {
+            var req = new XMLHttpRequest();
+            req.open("POST", "http://localhost:52532/api/Test3/TestAction1");
+            req.send();
+
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    document.getElementById("responsebox").innerText = req.responseText;
+                }
+            }
+        }
+
+        function starttest5() {
+            var req = new XMLHttpRequest();
+            req.open("POST", "http://localhost:52532/api/Test3/TestAction2");
+            req.send();
+
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    document.getElementById("responsebox").innerText = req.responseText;
+                }
+            }
+        }
+
+        
+       
+
+    </script>
+</body>
+
+</html>
